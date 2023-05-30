@@ -1,0 +1,61 @@
+1.
+
+#/bin/bash
+function colors(){
+	local text=$1
+	local color=$2
+	if [ $color == "black" ]; then
+		echo -e "\e[30m$text\e[0m"
+
+	elif [ $color == "red" ]; then
+		echo -e "\e[31m$text\e[0m"
+	
+	elif [ $color == "green" ]; then
+		echo -e "\e[32m$text\e[0m"
+
+	elif [ $color == "brown" ]; then
+		echo -e "\e[33m$text\e[0m"
+
+	elif [ $color == "blue" ]; then
+		echo -e "\e[34m$text\e[0m"
+
+	elif [ $color == "magenta" ]; then
+		echo -e "\e[35m$text\e[0m"
+
+	elif [ $color == "cyan" ]; then
+		echo -e "\e[36m$text\e[0m"
+
+	elif [ $color == "white" ]; then
+		echo -e "\e[37m$text\e[0m"
+	else
+		echo "brak takiego koloru"
+	fi
+}
+
+colors $1 $2
+-------------------------------------------
+2.
+
+#!/bin/bash
+
+function fibonacci() {
+    local n=$1
+    if [ $n -eq 0 ] || [ $n -eq 1 ]; then
+        return $n
+    else
+        local a=$(( $n - 1 ))
+        local b=$(( $n - 2 ))
+        fibonacci $a
+        local fib_a=$?
+        fibonacci $b
+        local fib_b=$?
+        return $((fib_a + fib_b))
+    fi
+}
+
+fibonacci $1
+echo "Wynik: $?"
+-------------------------------------------
+3.
+
+--------

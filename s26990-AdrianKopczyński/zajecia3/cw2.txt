@@ -1,0 +1,48 @@
+1.
+
+#/bin/bash
+for i in {10..1..2}; do
+	echo $i
+done
+-------------------------------------------
+2.
+
+#/bin/bash
+for i in "$@"; do
+	echo "$i"
+done
+-------------------------------------------
+3.
+
+#/bin/bash
+IFS='\n'
+for i in *; do
+	echo "Patrzcie panstwo, oto plik : $i"
+done
+-------------------------------------------
+4.
+
+#!/bin/bash
+for i in *; do
+	if [[ $i =~ .c$ ]]; then
+		nazwa=${i%.*}
+		cc $i -o $nazwa
+	fi
+done
+-------------------------------------------
+5.
+
+#/bin/bash
+tablica=()
+for i in "$@"; do
+	tablica+=("$i")
+done
+
+for i in "${tablica[@]}"; do
+	cat $i
+done
+
+for i in "${tablica[@]}"; do
+	tac $i
+done
+-------------------------------------------

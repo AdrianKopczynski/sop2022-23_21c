@@ -1,0 +1,63 @@
+1.
+
+#/bin/bash
+if [ $# -gt 1 ]; then
+	echo $1
+else
+	echo Nie podano param
+fi
+-------------------------------------------
+2.
+
+#/bin/bash
+if  [ -f config.cfg ]; then
+	bash ./config.cfg
+else
+	if [ $# -ge 1 ]; then
+	    bash ./$1
+	else
+	    echo Wystapil blad
+	fi
+fi
+---------------------------------------
+3.
+
+sposob 1
+
+#/bin/bash
+nazwa=$0
+if [[ ${nazwa: -3} == ".sh" ]];then
+	echo Nazwa poprawna
+else
+	mv $nazwa $nazwa.sh
+fi
+
+sposob 2
+
+#!/bin/bash
+nazwa=$0
+if [[ ${nazwa##*.} == "sh" ]]; then
+        echo Nazwa poprawna
+else
+        mv $nazwa $nazwa.sh
+fi
+
+sposob 3
+
+#!/bin/bash
+nazwa=$0
+if [[ $nazwa =~ \.sh$ ]]; then
+	echo Nazwa poprawna
+else
+	mv $nazwa $nazwa.sh
+fi
+
+---------------------------------------
+4.
+
+#/bin/bash
+ilosc=`find -maxdepth 1 -type f | wc -l`
+if [ $ilosc -gt 5 ]; then
+        echo Jest wiecej plikow niz 5
+fi
+---------------------------------------
