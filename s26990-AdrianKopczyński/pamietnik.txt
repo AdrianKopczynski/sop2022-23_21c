@@ -2,3 +2,18 @@
 
 Dzisiaj nauczyłem się instalować system Debian używając do tego narzędzia "VirtualBox" oraz poznałem jego minimalne wymagania systemowe i opcje podczas isntalacji.
 Dowiedziałem się też, że "każdy szanujący się inżynier" nie będzie przeprowadzał tej instalacji w trybie GUI, aczkolwiek uważam to za subiektywną opinię gdyż każdy robi jak mu wygodnie.
+
+18-03-2023
+Dzisiejsze zajęcia były dla mnie powtórką skryptów w Bashu. Reszta materiału była dla mnie zrozumiała.
+
+02-04-2023
+Na dzisiejszych zajeciach nauczylem sie jak tworzyc funkcje w języku Bash. Reszta materiału była dla mnie zrozumiała.
+
+22-04-2023
+Moj Kochany pamietniczku na dzisiejszych zajeciach poznałem podstawy języka C. Już wcześniej miałem z nim doczynienia jednak pojawiły się nmowe informacje, a poprzednia wiedza została uzupełniona.
+
+06-05-2023
+Dzisiaj na zajeciach nauczylem się tworzyć procesy oraz pobierać o nich informacje.
+
+20-05-2023
+Na dzisiejszych zajeciach dowiedziałem się czym są sockety i sygnały w c/C++ , nie zrozumiałem wszystkiego z racji na obszernośc materiału, jednak doczytam sam w domu.
