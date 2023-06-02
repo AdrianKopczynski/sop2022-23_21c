@@ -5,11 +5,12 @@ Przygotwanie VirtualBox:
 	* Dysk wybieram przedzialany dynamicznie z racji braku wymagań wydajnośćowych systemu (instalacja następuje wyłącznie w celach edukacjynych). Taka opcja nie zajmuje też z góry miejsca na dysku, tylko przydziela je odpowiednio ze zwiększaniem się ilości danych.
 	* Rozmiar dysku przydzielam na 3GB, żeby mieć trochę zapasu do wyamganych 2GB przez system.
 	* Opcje "System" - urządzenie wskazujące - na mysz PS/2 z powodu korzystania z myszy. Ilość CPU - 2 (przy ustawionym na 1 instalacja wyrzucała "Kernel Panic"). Reszta - domyślne. 
-	* Opcje "Ekran" - domyślne.
+	* Opcje "Ekran" - domyślnie, nie potrzeba więcej VRAM'u, niż domyślne 20MB przydzielone, ilość monitorów 1, kontroler grafiki również zostaje domyślny - VMSVGA.
 	* Opcje "Dźwięk" - wyłączam z racji na brak potrzeby używania audio.
 	* Sieć ustawiam jako NAT by mieć dostęp do internetu.
 	* Portów szeregowych nie włączam, nie będzie potrzeby ich używania.
 	* Kontroler USB włączony 
+	* Dodaje folder udostępniony, żeby mieć możliwośc szybko przerzucać pliki między maszyną lokalną a maszyną wirtualną.
 	* Resztę opcji VB nie zmieniam.
 
 Instalacja Debiana:
@@ -26,10 +27,33 @@ Instalacja Debiana:
 	* Partycji swap nie tworzę, ponieważ przyznany wcześniej maszynuie RAM wystarczy, a na maszynie nie będę robił nic co by obciążało maszynę.
 	* Obie partycje jako primary bo jest ich mniej niż 4.
 	* System plików Ext4 bo jest najnowszy
+		Pozostałe opcje to:
+      Ext 3 - Mniejsza wydajność
+      Ext 2 - jeszcze starsza niż ext3
+      BRTFS - daje możliwość tworzenia macierzy RAID
+      JFS - bardzo podobny do Ext 4, obsługuje ogromnych rozmiarów partycje
+      XFS - dla serwerów, dodaje obsługe wielu systemów.
+      FAT16 - stary system plików, obsługuje małe partycje i pliki
+      SWAP - partycja zastępująca RAM w momencie kiedy zapełni
+     Możemy wybrać też miejsce montowania partycji:
+      / - stystemowa
+      /home - katalogi domowe
+      /tmp - pliki tymczasowe
+      /usr - dane użytkowników
+	  /var - na dane zmieniające się
+      /srv - usługi/serwisy
+      /opt - odatkowe aplikacjelub pakiety
 	* Pomijam opcję wyboru płyty.
 	* Mirror server wybieram ten najbliżej mmojej lokalizacji, konkretnie ten na Politechnice Gdańskiej: ftp.task.gda.pl
 	* Pomijam dodawanie proxy, bo go nie potrzebuję.
 	* Opcję zbierania statystyk zostawiam na "Nie", bo po co mają zbierać moje dane.
 	* Przy wyborze software'u zostawiam domyślne, instaluje tylko serwer SSH i podstawowe narzędzia.
+		Opcje GUI do wyboru:	
+			GNOME - intuicyjny i wygodny interferjs graficzny, który pobiera sporo zasobów komputera/maszyny wirtualnej
+			KDE - mniej obciąża niż GNOME
+			XFCE - posiada podstawowe narzędzia, mało obciąża dostępne podzespoły
+			LXDE/LXQT - najbardziej lekkie GUI stworzone z myslą o mniej wydajnych jednostkach
+			Cinnamon - powstał od GNOME, jednak wraz z nowszymi wersjami stał się samodzielnym GUI
+			MATE - mniejsze wymagania sprzętowe od GNOME
 	* Instaluję boot loadera GRUB ,ponieważ bez tego nie uruchomimy systemu. Instaluję go w /dev/sda
 	* Instalacja zakończona pomyślnie.
